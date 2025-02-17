@@ -70,3 +70,69 @@ billion bits per second (for all cores)
 সারাংশ:
 প্রতি core প্রতি সেকেন্ডে 192 বিলিয়ন বিট প্রসেস হবে।
 4-core CPU এর জন্য, মোট 768 বিলিয়ন বিট প্রতি সেকেন্ডে প্রসেস হবে।
+
+
+
+
+Thread কী?
+Thread একটি ছোট কাজের ইউনিট, যা core এর দ্বারা প্রসেস করা হয়। একাধিক থ্রেড একই core এর মধ্যে চলতে পারে। Thread-এর সাহায্যে একসাথে একাধিক কাজ সম্পন্ন করা সম্ভব, এবং multi-core processors এ একাধিক থ্রেড একসাথে চলতে পারে।
+যদি একাধিক core থাকে, তবে সেই core গুলি একসাথে একাধিক thread প্রক্রিয়াকরণ করতে পারে। একাধিক থ্রেড চালানোর ফলে প্রসেসর আরও দ্রুত কাজ করতে পারে।
+
+Thread এবং Core এর সম্পর্ক:
+Single-core processor: একটি core একসাথে একটি thread প্রক্রিয়া করতে পারে।
+Multi-core processor: একাধিক core একসাথে একাধিক thread প্রক্রিয়া করতে সক্ষম। যেমন, ৪-core processor ৪টি আলাদা থ্রেড একসাথে প্রক্রিয়া করতে পারে।
+Hyper-Threading বা Multi-Threading:
+Hyper-Threading (Intel এর একটি প্রযুক্তি) বা multi-threading এর মাধ্যমে, একটি core একসাথে একাধিক thread পরিচালনা করতে পারে। এতে core এর দক্ষতা বেড়ে যায় এবং একই core বেশি কাজ করতে সক্ষম হয়।
+
+উদাহরণ:
+ধরা যাক, একটি 4-core processor আছে, আর প্রতিটি core এর মধ্যে 2 thread সাপোর্ট করা যাচ্ছে (যা hyper-threading এর মাধ্যমে সম্ভব), তখন মোট 8 thread একসাথে চলতে পারে।
+
+তাহলে, 64-bit, 3.0 GHz, 4-core এবং 2-thread এর সাথে কেমন হবে?
+64-bit: প্রতি সাইকেলে 64 বিট প্রসেস হবে।
+3.0 GHz: প্রতি সেকেন্ডে 3 বিলিয়ন সাইকেল হবে, অর্থাৎ প্রতি সেকেন্ডে 3 বিলিয়ন সাইকেল 64 বিট করে প্রসেস হবে।
+4-core processor: প্রতি core আলাদা আলাদা কাজ করতে সক্ষম।
+Hyper-Threading (2 threads per core): এর মানে, প্রতি core একসাথে ২টি thread পরিচালনা করতে পারে।
+ক্যালকুলেশন:
+প্রতিটি core প্রতি সেকেন্ডে 3.0 GHz × 64 bits প্রসেস করবে:
+
+3.0
+×
+10
+9
+ 
+(GHz)
+×
+64
+ 
+bits
+=
+192
+ 
+billion bits per core per second
+3.0×10 
+9
+ (GHz)×64bits=192billion bits per core per second
+এখন, 4 cores এর মধ্যে মোট হবে:
+
+192
+ 
+billion bits per core per second
+×
+4
+ 
+cores
+=
+768
+ 
+billion bits per second for all cores
+192billion bits per core per second×4cores=768billion bits per second for all cores
+যদি hyper-threading থাকে (প্রতি core-এ ২টি thread):
+
+মোট 8 threads হবে।
+প্রতিটি thread পৃথকভাবে কাজ করবে, এবং প্রতিটি thread প্রতি সেকেন্ডে 192 বিলিয়ন বিট প্রসেস করবে।
+তবে, একই ৪টি core এর মধ্যে ৮টি thread সমান্তরালভাবে কাজ করবে, যার মানে CPU আরো দ্রুত কাজ করতে সক্ষম হবে।
+সারাংশ:
+4-core processor এর সাথে hyper-threading প্রযুক্তি থাকলে, প্রতি core ২টি thread পরিচালনা করতে পারবে, মোট ৮টি thread একসাথে কাজ করবে।
+প্রতিটি thread প্রতি সেকেন্ডে 192 বিলিয়ন বিট প্রসেস করবে।
+মোট 8 threads একসাথে 1.536 ট্রিলিয়ন বিট (1,536 × 10^9 বিট) প্রতি সেকেন্ডে প্রসেস হবে।
+এভাবে, thread এর সাহায্যে CPU আরও দক্ষভাবে একাধিক কাজ করতে পারে।
